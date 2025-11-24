@@ -1,0 +1,5 @@
+{
+  "name": "NMI 3DS Shopify Custom App v0.1",
+  "description": "Прототип архитектуры интеграции NMI Payment Gateway для Shopify с поддержкой 3D Secure симуляции.",
+  "requestFramePermissions": []
+}
