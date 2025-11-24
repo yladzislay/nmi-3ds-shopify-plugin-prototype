@@ -43,7 +43,7 @@ import { SimulationService } from '../../services/simulation.service';
           </div>
 
           <div class="flex justify-center mb-6 relative">
-              <input type="text" class="w-32 text-center text-2xl font-mono tracking-widest border-b-2 border-blue-500 focus:outline-none bg-transparent" placeholder="1234">
+              <input type="text" class="w-32 text-center text-2xl font-mono tracking-widest border-b-2 border-blue-500 focus:outline-none bg-transparent text-gray-900" placeholder="1234">
               <div class="absolute -right-4 top-1 text-gray-400 text-[10px] animate-pulse">Введите любой код</div>
           </div>
           

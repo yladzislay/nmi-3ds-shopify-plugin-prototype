@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+
+import { Component, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { SimulationService, ScenarioType, CardData } from '../../services/simulation.service';
@@ -89,7 +90,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                       <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-100 to-indigo-100 rounded opacity-0 group-hover:opacity-50 transition duration-500"></div>
                       <div class="relative">
                          <input formControlName="cardNumber" type="text" 
-                          class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent transition-all font-mono" 
+                          class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent transition-all font-mono text-gray-900" 
                           placeholder="0000 0000 0000 0000">
                         <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Номер карты</label>
                         <div class="absolute right-3 top-3 text-gray-400 group-hover:text-indigo-500 transition-colors">
@@ -101,13 +102,13 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                     <div class="grid grid-cols-2 gap-4">
                       <div class="relative">
                         <input formControlName="expiry" type="text" 
-                          class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent" 
+                          class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent text-gray-900" 
                           placeholder="MM/YY">
                         <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Срок действия (MM/YY)</label>
                       </div>
                       <div class="relative">
                         <input formControlName="cvv" type="text" 
-                          class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent" 
+                          class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent text-gray-900" 
                           placeholder="123">
                         <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">CVV код</label>
                       </div>
@@ -115,7 +116,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
 
                     <div class="relative">
                       <input formControlName="name" type="text" 
-                        class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent" 
+                        class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent text-gray-900" 
                         placeholder="Name on card">
                       <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Имя на карте</label>
                     </div>
@@ -375,12 +376,28 @@ export class CheckoutSimComponent {
   simService = inject(SimulationService);
   fb: FormBuilder = inject(FormBuilder);
 
+  private readonly DEFAULT_CARD = {
+    cardNumber: '4242 4242 4242 4242',
+    expiry: '12/26',
+    cvv: '123',
+    name: 'Test User'
+  };
+
   paymentForm = this.fb.group({
-    cardNumber: ['4242 4242 4242 4242', Validators.required],
-    expiry: ['12/26', Validators.required],
-    cvv: ['123', Validators.required],
-    name: ['Test User', Validators.required]
+    cardNumber: [this.DEFAULT_CARD.cardNumber, Validators.required],
+    expiry: [this.DEFAULT_CARD.expiry, Validators.required],
+    cvv: [this.DEFAULT_CARD.cvv, Validators.required],
+    name: [this.DEFAULT_CARD.name, Validators.required]
   });
+
+  constructor() {
+    // Automatically reset the form values when the service status goes back to IDLE
+    effect(() => {
+      if (this.simService.status() === 'IDLE') {
+        this.paymentForm.reset(this.DEFAULT_CARD);
+      }
+    });
+  }
 
   onSubmit() {
     if (this.paymentForm.valid) {
