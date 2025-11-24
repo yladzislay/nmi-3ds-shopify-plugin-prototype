@@ -1,3 +1,4 @@
+
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArchitectureComponent } from './components/docs/architecture.component';
