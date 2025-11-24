@@ -30,9 +30,9 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
             
             <!-- Breadcrumbs -->
             <div class="px-6 md:px-8 pt-6 pb-4 border-b border-gray-100 flex items-center gap-2 text-xs text-gray-500 flex-shrink-0">
-               <span class="text-blue-600 cursor-pointer">Shopify Store</span>
+               <span class="text-blue-600 cursor-pointer">Магазин Shopify</span>
                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-               <span class="font-bold text-gray-800">Checkout</span>
+               <span class="font-bold text-gray-800">Оформление заказа</span>
             </div>
 
             <div class="p-6 md:p-8 max-w-xl mx-auto w-full flex-shrink-0 relative">
@@ -76,7 +76,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                   <div class="bg-gray-50 p-4 flex items-center justify-between border-b border-gray-200">
                      <span class="font-medium text-gray-900 text-sm flex items-center gap-2">
                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                       Credit Card
+                       Банковская карта
                      </span>
                      <div class="flex gap-1 opacity-70">
                         <div class="h-5 w-8 bg-white border rounded flex items-center justify-center"><span class="text-[8px] font-bold italic text-blue-800">VISA</span></div>
@@ -92,7 +92,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                          <input formControlName="cardNumber" type="text" 
                           class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent transition-all font-mono" 
                           placeholder="0000 0000 0000 0000">
-                        <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Card number</label>
+                        <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Номер карты</label>
                         <div class="absolute right-3 top-3 text-gray-400 group-hover:text-indigo-500 transition-colors">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                         </div>
@@ -104,13 +104,13 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                         <input formControlName="expiry" type="text" 
                           class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent" 
                           placeholder="MM/YY">
-                        <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Expiration date (MM/YY)</label>
+                        <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Срок действия (MM/YY)</label>
                       </div>
                       <div class="relative">
                         <input formControlName="cvv" type="text" 
                           class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent" 
                           placeholder="123">
-                        <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Security code</label>
+                        <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">CVV код</label>
                       </div>
                     </div>
 
@@ -118,7 +118,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                       <input formControlName="name" type="text" 
                         class="peer w-full px-3 pt-5 pb-2 border rounded border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white placeholder-transparent" 
                         placeholder="Name on card">
-                      <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Name on card</label>
+                      <label class="absolute text-xs text-gray-500 top-2 left-3 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs pointer-events-none">Имя на карте</label>
                     </div>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                     type="submit" 
                     [disabled]="paymentForm.invalid || simService.isProcessing()"
                     class="w-full bg-black hover:bg-gray-800 text-white font-medium py-4 rounded-md shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-3 text-lg mt-4">
-                    Pay $125.99
+                    Оплатить $125.99
                 </button>
               </form>
             </div>
@@ -135,7 +135,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
             <div class="mt-auto border-t border-gray-100 p-4 text-center text-xs text-gray-400 flex-shrink-0 bg-gray-50">
                <span class="flex items-center justify-center gap-1">
                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                 Securely processed by NMI Payment Gateway
+                 Безопасная обработка через NMI Payment Gateway
                </span>
             </div>
           </div>
@@ -149,18 +149,18 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                 </div>
                 <div>
                    <p class="text-sm font-medium text-gray-900">Nike Air Max 90</p>
-                   <p class="text-xs text-gray-500">Limited Edition</p>
+                   <p class="text-xs text-gray-500">Лимитированная серия</p>
                 </div>
                 <div class="text-sm font-medium text-gray-900 ml-auto">$125.99</div>
              </div>
              <div class="border-t border-gray-200 my-4"></div>
              <div class="space-y-3 text-sm">
-               <div class="flex justify-between"><span class="text-gray-500">Subtotal</span><span class="font-medium text-gray-900">$125.99</span></div>
-               <div class="flex justify-between"><span class="text-gray-500">Shipping</span><span class="text-gray-500">Free</span></div>
+               <div class="flex justify-between"><span class="text-gray-500">Подытог</span><span class="font-medium text-gray-900">$125.99</span></div>
+               <div class="flex justify-between"><span class="text-gray-500">Доставка</span><span class="text-gray-500">Бесплатно</span></div>
              </div>
              <div class="border-t border-gray-200 my-4"></div>
              <div class="flex justify-between items-baseline">
-               <span class="text-base font-medium text-gray-900">Total</span>
+               <span class="text-base font-medium text-gray-900">Итого</span>
                <div class="flex items-baseline gap-2"><span class="text-xs text-gray-500">USD</span><span class="text-xl font-bold text-gray-900">$125.99</span></div>
              </div>
           </div>
@@ -173,10 +173,10 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
               <div class="bg-[#1a1a1a] h-12 flex items-center px-4 justify-between flex-shrink-0">
                  <div class="flex items-center gap-3">
                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-[10px] font-bold text-[#1a1a1a]">S</div>
-                   <span class="text-gray-300 text-sm font-medium">Shopify Admin</span>
+                   <span class="text-gray-300 text-sm font-medium">Администратор Shopify</span>
                  </div>
                  <div class="flex items-center gap-2">
-                    <input type="text" placeholder="Search" class="bg-[#303030] border-none rounded text-xs px-2 py-1 text-white w-48 focus:ring-0">
+                    <input type="text" placeholder="Поиск" class="bg-[#303030] border-none rounded text-xs px-2 py-1 text-white w-48 focus:ring-0">
                     <div class="w-6 h-6 rounded-full bg-pink-600 text-white text-xs flex items-center justify-center">D</div>
                  </div>
               </div>
@@ -188,11 +188,11 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                        <button (click)="resetView()" class="p-1 rounded hover:bg-gray-200 text-gray-500">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                        </button>
-                       <h1 class="text-2xl font-bold text-gray-900">Order #1001</h1>
-                       <span class="px-2 py-0.5 rounded bg-green-100 text-green-800 text-xs font-bold border border-green-200">Paid</span>
-                       <span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 text-xs font-bold border border-yellow-200">Unfulfilled</span>
+                       <h1 class="text-2xl font-bold text-gray-900">Заказ #1001</h1>
+                       <span class="px-2 py-0.5 rounded bg-green-100 text-green-800 text-xs font-bold border border-green-200">Оплачен</span>
+                       <span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 text-xs font-bold border border-yellow-200">Не отправлен</span>
                     </div>
-                    <div class="text-sm text-gray-500">Just now</div>
+                    <div class="text-sm text-gray-500">Только что</div>
                  </div>
 
                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -201,41 +201,41 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                        <!-- Product Card -->
                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
                           <div class="flex items-center justify-between mb-4">
-                             <h3 class="font-bold text-sm text-gray-900">Unfulfilled</h3>
-                             <span class="text-xs text-blue-600">Fulfillment location</span>
+                             <h3 class="font-bold text-sm text-gray-900">Не отправлен</h3>
+                             <span class="text-xs text-blue-600">Склад отгрузки</span>
                           </div>
                           <div class="flex gap-4">
                              <div class="w-10 h-10 border rounded bg-gray-50 flex items-center justify-center">👟</div>
                              <div class="flex-1">
                                 <div class="text-sm text-blue-600 font-medium hover:underline cursor-pointer">Nike Air Max 90</div>
-                                <div class="text-xs text-gray-500">Limited Edition</div>
+                                <div class="text-xs text-gray-500">Лимитированная серия</div>
                              </div>
                              <div class="text-sm text-gray-900">$125.99 x 1</div>
                              <div class="text-sm font-bold text-gray-900">$125.99</div>
                           </div>
                           <div class="mt-4 pt-4 border-t border-gray-100 flex justify-end gap-2">
-                             <button class="px-3 py-1.5 border border-gray-300 rounded shadow-sm text-xs font-medium text-gray-700 bg-white hover:bg-gray-50">Create shipping label</button>
-                             <button class="px-3 py-1.5 bg-green-700 rounded shadow-sm text-xs font-medium text-white hover:bg-green-800">Fulfill item</button>
+                             <button class="px-3 py-1.5 border border-gray-300 rounded shadow-sm text-xs font-medium text-gray-700 bg-white hover:bg-gray-50">Создать накладную</button>
+                             <button class="px-3 py-1.5 bg-green-700 rounded shadow-sm text-xs font-medium text-white hover:bg-green-800">Отправить товар</button>
                           </div>
                        </div>
 
                        <!-- Payment Card -->
                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
                           <div class="flex items-center justify-between mb-4">
-                             <h3 class="font-bold text-sm text-gray-900">Paid</h3>
-                             <span class="text-xs text-gray-500">Net payment will be paid out soon</span>
+                             <h3 class="font-bold text-sm text-gray-900">Оплачен</h3>
+                             <span class="text-xs text-gray-500">Выплата скоро поступит на счет</span>
                           </div>
                           <div class="flex justify-between items-center text-sm mb-2">
-                             <span class="text-gray-600">Subtotal</span>
+                             <span class="text-gray-600">Подытог</span>
                              <span>$125.99</span>
                           </div>
                           <div class="flex justify-between items-center text-sm mb-4">
-                             <span class="text-gray-600">Total</span>
+                             <span class="text-gray-600">Итого</span>
                              <span class="font-bold">$125.99</span>
                           </div>
                           <div class="border-t border-gray-100 pt-4">
                              <div class="flex justify-between text-xs text-gray-500 mb-1">
-                                <span>Paid by customer</span>
+                                <span>Оплачено клиентом</span>
                                 <span>$125.99</span>
                              </div>
                              <div class="flex items-center justify-between">
@@ -245,7 +245,7 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                                 </div>
                                 <div class="flex items-center gap-2 text-xs text-gray-500">
                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
-                                   Processed by NMI Gateway
+                                   Обработано шлюзом NMI
                                 </div>
                              </div>
                           </div>
@@ -255,17 +255,17 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                        <div class="pl-4 border-l-2 border-gray-200 space-y-6 relative">
                           <div class="relative">
                              <div class="absolute -left-[21px] top-1 w-3 h-3 bg-gray-400 rounded-full border-2 border-white box-content"></div>
-                             <p class="text-xs text-gray-500">Order placed from Online Store</p>
+                             <p class="text-xs text-gray-500">Заказ оформлен в онлайн-магазине</p>
                           </div>
                           <div class="relative">
                              <div class="absolute -left-[21px] top-1 w-3 h-3 bg-gray-400 rounded-full border-2 border-white box-content"></div>
-                             <p class="text-sm text-gray-900 mb-1">Authorization was successful</p>
+                             <p class="text-sm text-gray-900 mb-1">Авторизация прошла успешно</p>
                              <div class="bg-white p-3 border rounded text-xs text-gray-600 font-mono space-y-1">
-                                <div class="flex justify-between"><span>Gateway:</span> <span class="text-gray-900">NMI</span></div>
-                                <div class="flex justify-between"><span>Auth Code:</span> <span class="text-gray-900">883721</span></div>
-                                <div class="flex justify-between"><span>Transaction ID:</span> <span class="text-gray-900">tr_998877</span></div>
-                                <div class="flex justify-between"><span>AVS Result:</span> <span class="text-green-600">Match (Y)</span></div>
-                                <div class="flex justify-between"><span>3DS Status:</span> <span class="text-green-600">Success (Liability Shift)</span></div>
+                                <div class="flex justify-between"><span>Шлюз (Gateway):</span> <span class="text-gray-900">NMI</span></div>
+                                <div class="flex justify-between"><span>Код авт. (Auth):</span> <span class="text-gray-900">883721</span></div>
+                                <div class="flex justify-between"><span>ID Транзакции:</span> <span class="text-gray-900">tr_998877</span></div>
+                                <div class="flex justify-between"><span>Результат AVS:</span> <span class="text-green-600">Совпадение (Y)</span></div>
+                                <div class="flex justify-between"><span>Статус 3DS:</span> <span class="text-green-600">Успех (Liability Shift)</span></div>
                              </div>
                           </div>
                        </div>
@@ -274,33 +274,33 @@ import { StatusOverlayComponent } from '../modals/status-overlay.component';
                     <!-- Right Column -->
                     <div class="space-y-6">
                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                          <h3 class="font-bold text-sm text-gray-900 mb-3">Customer</h3>
-                          <div class="text-sm text-blue-600 mb-1 hover:underline cursor-pointer">John Doe</div>
-                          <p class="text-xs text-gray-500">1 order</p>
+                          <h3 class="font-bold text-sm text-gray-900 mb-3">Клиент</h3>
+                          <div class="text-sm text-blue-600 mb-1 hover:underline cursor-pointer">Джон Доу</div>
+                          <p class="text-xs text-gray-500">1 заказ</p>
                           <div class="mt-4 pt-4 border-t border-gray-100">
-                             <h4 class="font-bold text-xs text-gray-900 mb-1">Contact information</h4>
+                             <h4 class="font-bold text-xs text-gray-900 mb-1">Контакты</h4>
                              <p class="text-xs text-blue-600 hover:underline cursor-pointer">john@example.com</p>
                           </div>
                           <div class="mt-4 pt-4 border-t border-gray-100">
-                             <h4 class="font-bold text-xs text-gray-900 mb-1">Shipping address</h4>
+                             <h4 class="font-bold text-xs text-gray-900 mb-1">Адрес доставки</h4>
                              <p class="text-xs text-gray-600">
                                 123 Main St<br>
                                 New York, NY 10001<br>
-                                United States
+                                США
                              </p>
                           </div>
                        </div>
                        
                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                          <h3 class="font-bold text-sm text-gray-900 mb-2">Fraud analysis</h3>
+                          <h3 class="font-bold text-sm text-gray-900 mb-2">Анализ рисков</h3>
                           <div class="flex items-center gap-2 mb-2">
                              <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                             <span class="text-sm text-gray-900">Low</span>
+                             <span class="text-sm text-gray-900">Низкий</span>
                           </div>
                           <p class="text-xs text-gray-500 leading-relaxed">
-                             3D Secure check passed. Card Verification Value (CVV) is correct.
+                             Проверка 3D Secure пройдена. Код CVV верен.
                           </p>
-                          <button class="mt-3 text-xs text-blue-600 hover:underline border border-gray-200 rounded px-2 py-1 bg-gray-50 w-full">View full analysis</button>
+                          <button class="mt-3 text-xs text-blue-600 hover:underline border border-gray-200 rounded px-2 py-1 bg-gray-50 w-full">Полный отчет</button>
                        </div>
                     </div>
                  </div>

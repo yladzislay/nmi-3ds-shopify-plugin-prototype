@@ -196,65 +196,54 @@ import { CommonModule } from '@angular/common';
             Roadmap Реализации
           </h2>
 
-          <div class="relative border-l-2 border-indigo-100 ml-3 md:ml-6 space-y-12">
+          <div class="relative border-l-2 border-indigo-100 ml-3 md:ml-6 space-y-10">
             
-            <!-- Phase 1 -->
+            <!-- Step 1-2 -->
             <div class="relative pl-8 md:pl-12">
               <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-white"></span>
-              <div class="mb-2 flex items-center gap-3">
-                <h3 class="text-xl font-bold text-gray-900">Фаза 1: Фундамент (MVP)</h3>
-                <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 text-[10px] font-bold uppercase">Спринт 1</span>
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-gray-50 p-4 rounded border border-gray-100">
-                  <div class="font-bold text-gray-800 text-sm mb-1">1. Setup & Config</div>
-                  <p class="text-xs text-gray-500">Инициализация Shopify CLI, деплой на Fly.io, настройка переменных окружения (NMI Keys).</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded border border-gray-100">
-                  <div class="font-bold text-gray-800 text-sm mb-1">2. Basic Transaction</div>
-                  <p class="text-xs text-gray-500">Реализация методов <code>authorize</code> и <code>capture</code>. Проверка успешной оплаты без 3DS.</p>
-                </div>
+              <div class="mb-4">
+                <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 text-[10px] font-bold uppercase mb-2 inline-block">Фундамент</span>
+                <h3 class="text-lg font-bold text-gray-900">1-2. Каркас и Базовые платежи</h3>
+                <p class="text-sm text-gray-600 mt-1">
+                  Настройка Shopify CLI, Remix Backend. Получение ключей NMI Sandbox. Реализация методов <code>authorize</code> и <code>capture</code>.
+                </p>
               </div>
             </div>
 
-            <!-- Phase 2 -->
+             <!-- Step 3-4 -->
             <div class="relative pl-8 md:pl-12">
-              <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-yellow-500 ring-4 ring-white shadow-sm"></span>
-              <div class="mb-2 flex items-center gap-3">
-                <h3 class="text-xl font-bold text-gray-900">Фаза 2: Безопасность (3DS)</h3>
-                <span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 text-[10px] font-bold uppercase">Спринт 2</span>
-              </div>
-              <p class="text-gray-600 mb-4 text-sm">Самый критичный этап для Compliance.</p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <div class="bg-yellow-50 p-4 rounded border border-yellow-100">
-                  <div class="font-bold text-gray-900 text-sm mb-1">3. Challenge Flow Logic</div>
-                  <p class="text-xs text-gray-600">Обработка ответа <code>200 Soft Decline</code>. Редирект юзера на ACS URL.</p>
-                </div>
-                <div class="bg-yellow-50 p-4 rounded border border-yellow-100">
-                  <div class="font-bold text-gray-900 text-sm mb-1">4. Callback Handling</div>
-                  <p class="text-xs text-gray-600">Безопасный прием ответа от банка. Валидация подписи (если есть) и финализация заказа.</p>
-                </div>
+              <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-yellow-500 ring-4 ring-white"></span>
+              <div class="mb-4">
+                <span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 text-[10px] font-bold uppercase mb-2 inline-block">Безопасность (Критично)</span>
+                <h3 class="text-lg font-bold text-gray-900">3-4. Интеграция 3D Secure</h3>
+                <p class="text-sm text-gray-600 mt-1">
+                   Реализация <strong>Frictionless Flow</strong> (без SMS) и <strong>Challenge Flow</strong> (редирект на ACS). Обработка Soft Decline (Code 200).
+                </p>
               </div>
             </div>
 
-            <!-- Phase 3 -->
+            <!-- Step 5-6 -->
+            <div class="relative pl-8 md:pl-12">
+              <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-400 ring-4 ring-white"></span>
+              <div class="mb-4">
+                <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[10px] font-bold uppercase mb-2 inline-block">Эксплуатация</span>
+                <h3 class="text-lg font-bold text-gray-900">5-6. Логирование и Админка</h3>
+                <p class="text-sm text-gray-600 mt-1">
+                   Создание таблицы транзакций в PostgreSQL. Добавление страницы "Transactions" в админку Shopify для просмотра логов и выполнения возвратов (Refund).
+                </p>
+              </div>
+            </div>
+
+             <!-- Step 7-8 -->
             <div class="relative pl-8 md:pl-12">
               <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-green-500 ring-4 ring-white"></span>
-              <div class="mb-2 flex items-center gap-3">
-                <h3 class="text-xl font-bold text-gray-900">Фаза 3: Production Ready</h3>
-                <span class="px-2 py-0.5 rounded bg-green-100 text-green-700 text-[10px] font-bold uppercase">Спринт 3</span>
+              <div class="mb-4">
+                <span class="px-2 py-0.5 rounded bg-green-100 text-green-700 text-[10px] font-bold uppercase mb-2 inline-block">Финализация</span>
+                <h3 class="text-lg font-bold text-gray-900">7-8. Webhooks и Тестирование</h3>
+                <p class="text-sm text-gray-600 mt-1">
+                   Синхронизация статусов через Shopify Webhooks. E2E тестирование всех сценариев в Sandbox.
+                </p>
               </div>
-              <ul class="space-y-2 mt-3">
-                <li class="flex items-center gap-2 text-sm text-gray-600">
-                  <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  Логирование в БД (PostgreSQL)
-                </li>
-                <li class="flex items-center gap-2 text-sm text-gray-600">
-                  <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  Админ-панель транзакций (Refund button)
-                </li>
-              </ul>
             </div>
 
           </div>
@@ -331,6 +320,10 @@ export class ArchitectureComponent {
   }
 
   <span class="text-gray-500">// 4. Успех</span>
-  <span class="text-pink-400">return</span> json({ status: <span class="text-green-400">"success"</span> });
+  <span class="text-pink-400">if</span> (nmiResponse.response_code === <span class="text-yellow-300">'100'</span>) {
+    <span class="text-pink-400">return</span> json({ status: <span class="text-green-400">"success"</span> });
+  }
+
+  <span class="text-pink-400">return</span> json({ status: <span class="text-red-400">"failed"</span> });
 };`;
 }
